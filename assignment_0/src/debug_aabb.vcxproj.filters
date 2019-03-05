@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\debug_aabb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Cylinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\vec3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Cylinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\SolveQuadratic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\StopWatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\vec3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{00E4997F-1A04-310E-9ECD-F3E9321C42E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2290EDB4-0BD1-3A6C-8A83-8216E7628AD7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\bouba\Workspace_IntroGraphics\IntroGraphics\assignment_0\CMakeFiles\e704c0cc77f4f04f22045803f37436b6\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{22A26BC7-684F-3BF1-8F38-19D51BBA5DE1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
