@@ -282,6 +282,36 @@ intersect_triangle(const Triangle&  _triangle,
     * Refer to [Cramer's Rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) to easily solve it.
      */
 
+    vec3 col_1 = p0 - p2;
+    vec3 col_2 = p1 - p2;
+    vec3 col_3 = -_ray.direction;
+    vec3 b     = _ray.origin - p2;
+
+    _intersection_t = NO_INTERSECTION;
+
+    double det_A = col_1[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+
+    if(det_A != 0){
+
+        double det_A1 = b[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(b[1]*col_3[2] - b[2]*col_3[1]) + col_3[3]*(b[1]*col_2[2] - b[2]*col_2[1]);
+        double det_A2 = col_1[3]*(b[1]*col_3[2] - b[2]*col_3[1]) - b[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*b[2] - col_1[2]*b[1]);
+        double det_A3 = col_1[3]*(col_2[1]*b[2] - col_2[2]*b[1]) - col_2[3]*(col_1[1]*b[2] - col_1[2]*b[1]) + b[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+
+        double alpha = det_A1 / det_A;
+        double beta  = det_A2 / det_A;
+        double gamma = 1 - alpha - beta; 
+
+        _intersection_t = det_A3 / det_A;
+
+        //Checking if the baricentric coefficients are positive and if the intersection is in front of the viewer
+        if((alpha < 0) || (beta < 0) || (gamma < 0) || (_intersection_t < 0)) return false;
+
+        _intersection_point  = _ray(_intersection_t);
+        _intersection_normal = alpha*vertices_[_triangle.i0].normal + beta*vertices_[_triangle.i1].normal + gamma*vertices_[_triangle.i2].normal;
+
+        return true;
+    }
+
     return false;
 }
 
