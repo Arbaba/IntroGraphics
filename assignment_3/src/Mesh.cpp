@@ -152,12 +152,12 @@ void Mesh::compute_normals()
      * - Weigh the normals by their triangles' angles.
      */
 
-    
-    //compute normal to vertices
+    //variables for the weight components for the different vertices of a triangle
     double w0 ;
     double w1 ;
     double w2 ;
-    
+
+    //compute normal to vertices for evry triangle so that vertex normals are going to be updated more than once possibly
     for (Triangle& t: triangles_)
     {
         angleWeights(vertices_[t.i0].position, vertices_[t.i1].position, vertices_[t.i2].position, w0, w1, w2 );
@@ -166,6 +166,7 @@ void Mesh::compute_normals()
         vertices_[t.i2].normal += t.normal * w2;
     }
 
+    //finally normalize 
     for (Vertex& v: vertices_)
     {
         v.normal = normalize(v.normal);
@@ -282,6 +283,8 @@ intersect_triangle(const Triangle&  _triangle,
     * Refer to [Cramer's Rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) to easily solve it.
      */
 
+    //useful variables representing the columns of the matrix found using the hint to solve Ax = b where  the x components are going to give 
+    //the barycentric cooefficients as well as the parameter t
     vec3 col_1 = p0 - p2;
     vec3 col_2 = p1 - p2;
     vec3 col_3 = -_ray.direction;
@@ -289,30 +292,37 @@ intersect_triangle(const Triangle&  _triangle,
 
     _intersection_t = NO_INTERSECTION;
 
+    //solving sytem with Cramer's rule by computing all determinants needed separatly first  
     double det_A = col_1[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+    
+    //check wheter we cal solve the system ie if there is an intersection (still need to check the barycentric coefficients later)
+    if(det_A == 0) return false;
 
-    if(det_A != 0){
+    //The determinants we need for using Cramer's rule for the various unknown ie baricentric coordinates and ray parameter
+    double det_A1 = b[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(b[1]*col_3[2] - b[2]*col_3[1]) + col_3[3]*(b[1]*col_2[2] - b[2]*col_2[1]);
+    double det_A2 = col_1[3]*(b[1]*col_3[2] - b[2]*col_3[1]) - b[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*b[2] - col_1[2]*b[1]);
+    double det_A3 = col_1[3]*(col_2[1]*b[2] - col_2[2]*b[1]) - col_2[3]*(col_1[1]*b[2] - col_1[2]*b[1]) + b[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
 
-        double det_A1 = b[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(b[1]*col_3[2] - b[2]*col_3[1]) + col_3[3]*(b[1]*col_2[2] - b[2]*col_2[1]);
-        double det_A2 = col_1[3]*(b[1]*col_3[2] - b[2]*col_3[1]) - b[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*b[2] - col_1[2]*b[1]);
-        double det_A3 = col_1[3]*(col_2[1]*b[2] - col_2[2]*b[1]) - col_2[3]*(col_1[1]*b[2] - col_1[2]*b[1]) + b[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+    //barycentric coefficients
+    double alpha = det_A1 / det_A;
+    double beta  = det_A2 / det_A;
+    double gamma = 1 - alpha - beta; 
 
-        double alpha = det_A1 / det_A;
-        double beta  = det_A2 / det_A;
-        double gamma = 1 - alpha - beta; 
+    //computing intersection parameter from Cramer's rule
+    _intersection_t = det_A3 / det_A;
 
-        _intersection_t = det_A3 / det_A;
+    //Checking if the baricentric coefficients are positive and if the intersection is in front of the viewer
+    if((alpha < 0) || (beta < 0) || (gamma < 0) || (_intersection_t < 0)) return false;
 
-        //Checking if the baricentric coefficients are positive and if the intersection is in front of the viewer
-        if((alpha < 0) || (beta < 0) || (gamma < 0) || (_intersection_t < 0)) return false;
+    //computing intersection point
+    _intersection_point  = _ray(_intersection_t);
 
-        _intersection_point  = _ray(_intersection_t);
-        _intersection_normal = alpha*vertices_[_triangle.i0].normal + beta*vertices_[_triangle.i1].normal + gamma*vertices_[_triangle.i2].normal;
+    //check wheter we want flat shaded or Phong shaded 
+    if(draw_mode_) _intersection_normal = _triangle.normal;
+    else _intersection_normal = normalize(alpha*vertices_[_triangle.i0].normal + beta*vertices_[_triangle.i1].normal + gamma*vertices_[_triangle.i2].normal);
 
-        return true;
-    }
-
-    return false;
+    return true;
+    
 }
 
 
