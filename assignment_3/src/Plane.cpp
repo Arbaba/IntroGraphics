@@ -35,9 +35,19 @@ intersect(const Ray& _ray,
           vec3&      _intersection_normal,
           double&    _intersection_t ) const
 {
-    // \todo Copy your assignment 1 solution here.
+  _intersection_t = NO_INTERSECTION;
+  double m = dot(normal, _ray.direction ) ;
 
-    return false;
+  if (m != 0){
+      _intersection_t  =  (dot(normal, center ) -  dot(normal, _ray.origin )) / m;
+  }
+
+  if (_intersection_t == NO_INTERSECTION || _intersection_t <= 0 ) return false;
+
+  _intersection_point  = _ray(_intersection_t);
+  _intersection_normal = (dot(normal, _ray.direction) > 0) ? -normal : normal;
+
+  return true;
 }
 
 
