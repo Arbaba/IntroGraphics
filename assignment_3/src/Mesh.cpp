@@ -299,9 +299,9 @@ intersect_triangle(const Triangle&  _triangle,
     if(det_A == 0) return false;
 
     //The determinants we need for using Cramer's rule for the various unknown ie baricentric coordinates and ray parameter
-    double det_A1 = b[2]*(col_2[0]*col_3[1] - col_2[1]*col_3[0]) - col_2[2]*(b[0]*col_3[1] - b[2]*col_3[0]) + col_3[2]*(b[0]*col_2[1] - b[1]*col_2[0]);
-    double det_A2 = col_1[2]*(b[0]*col_3[1] - b[2]*col_3[0]) - b[2]*(col_1[0]*col_3[1] - col_1[1]*col_3[0]) + col_3[2]*(col_1[0]*b[1] - col_1[1]*b[0]);
-    double det_A3 = col_1[2]*(col_2[0]*b[1] - col_2[2]*b[0]) - col_2[2]*(col_1[0]*b[1] - col_1[1]*b[0]) + b[2]*(col_1[0]*col_2[1] - col_1[1]*col_2[0]);
+    double det_A1 = b[2]*(col_2[0]*col_3[1] - col_2[1]*col_3[0]) - col_2[2]*(b[0]*col_3[1] - b[1]*col_3[0]) + col_3[2]*(b[0]*col_2[1] - b[1]*col_2[0]);
+    double det_A2 = col_1[2]*(b[0]*col_3[1] - b[1]*col_3[0]) - b[2]*(col_1[0]*col_3[1] - col_1[1]*col_3[0]) + col_3[2]*(col_1[0]*b[1] - col_1[1]*b[0]);
+    double det_A3 = col_1[2]*(col_2[0]*b[1] - col_2[1]*b[0]) - col_2[2]*(col_1[0]*b[1] - col_1[1]*b[0]) + b[2]*(col_1[0]*col_2[1] - col_1[1]*col_2[0]);
 
     //barycentric coefficients
     double alpha = det_A1 / det_A;
@@ -318,7 +318,7 @@ intersect_triangle(const Triangle&  _triangle,
     _intersection_point  = _ray(_intersection_t);
 
     //check wheter we want flat shaded or Phong shaded 
-    if(draw_mode_) _intersection_normal = _triangle.normal;
+    if(!draw_mode_) _intersection_normal = _triangle.normal;
     else _intersection_normal = normalize(alpha*vertices_[_triangle.i0].normal + beta*vertices_[_triangle.i1].normal + gamma*vertices_[_triangle.i2].normal);
 
     return true;
