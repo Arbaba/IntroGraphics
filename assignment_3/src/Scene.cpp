@@ -26,6 +26,12 @@
 #include <tbb/parallel_for.h>
 #endif
 
+// To prevent spurious intersections caused by numerical issues, we need to
+// offset the shadow and reflected ray emission points from the surface
+// intersection.
+constexpr double shadow_ray_offset = 1e-5;
+constexpr double reflection_ray_offset = 1e-5;
+
 //-----------------------------------------------------------------------------
 
 Image Scene::render()
@@ -94,20 +100,7 @@ vec3 Scene::trace(const Ray& _ray, int _depth)
     vec3 color = lighting(point, normal, -_ray.direction, object->material);
 
 
-    /** \todo
-     * Compute reflections by recursive ray tracing:
-     * - check whether `object` is reflective by checking its `material.mirror`
-     * - check recursion depth
-     * - generate reflected ray, compute its color contribution, and mix it with
-     * the color computed by local Phong lighting (use `object->material.mirror` as weight)
-     * - check whether your recursive algorithm reflects the ray `max_depth` times
-     */
-
-    //compute reflected ray
-    Ray ray_out = Ray(0.05*normal + point, reflect(_ray.direction, normal));
-
-    //compute color by adding the current Phong lighting with the recursive reflection component
-    color = (1 - object->material.mirror)*color+(object->material.mirror)*trace(ray_out, _depth + 1);
+    // \todo Paste your assignment 2 solution here.
 
     return color;
 }
@@ -140,67 +133,8 @@ bool Scene::intersect(const Ray& _ray, Object_ptr& _object, vec3& _point, vec3& 
 vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view, const Material& _material)
 {
 
-     /** \todo
-     * Compute the Phong lighting:
-     * - start with global ambient contribution
-     * - for each light source (stored in vector `lights`) add diffuse and specular contribution
-     * - only add diffuse and specular light if object is not in shadow
-     *
-     * You can look at the classes `Light` and `Material` to check their attributes. Feel free to use
-     * the existing vector functions in vec3.h e.g. mirror, reflect, norm, dot, normalize
-     */
-
-    // visualize the normal as a RGB color for now.
+    // \todo Paste your assignment 2 solution here.
     vec3 color = (_normal + vec3(1)) / 2.0;
-
-    //ambient part
-    color = ambience * _material.ambient;
-
-    double cos_theta = 0;
-    double cos_alpha = 0;
-
-    vec3 l =  vec3(0,0,0);
-    vec3 r =  vec3(0,0,0);
-    vec3 v =  _view;
-
-    //Parameters needed to use the function intersect()
-    Object_ptr  object;
-    vec3        point;
-    vec3        normals;
-    double      t;
-    Ray         ray;
-
-    bool intersection;
-    double thresh = 0.005;
-    double dist;
-
-    for (size_t i = 0; i < lights.size() ; i++) {
-
-        //Normalized vector starting from the point and going to the light source 
-        l = normalize(lights[i].position - _point);
-        //Perfect reflection of l over the surface
-        r = normalize(mirror(l, _normal));  
-
-        cos_theta = dot(_normal, l);
-        cos_alpha = dot(r, v);
-
-        //Creating a ray from our point to the light source 
-        ray = Ray(_point + _normal * thresh, l);
-        //Checking if ray intersect some object in his way to the light source 
-        intersection = intersect(ray, object, point, normals,t);
-
-        //Checking if the incident angle is bigger than 90 degrees and if the point is in shadow
-        if(cos_theta > 0 && !intersection || (intersection && (norm(_point - lights[i].position) < norm(_point - point)))){
-            //add diffusion part
-            color += lights[i].color * _material.diffuse * cos_theta;
-            //Checking if the light is reflected by more than 90 degrees or reflected "backward" 
-            if(cos_alpha > 0){
-              //add specular part
-               color +=  lights[i].color * _material.specular * pow(cos_alpha, _material.shininess);
-            }
-        } 
-        
-    }
 
     return color;
 }
