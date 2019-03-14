@@ -293,15 +293,15 @@ intersect_triangle(const Triangle&  _triangle,
     _intersection_t = NO_INTERSECTION;
 
     //solving sytem with Cramer's rule by computing all determinants needed separatly first  
-    double det_A = col_1[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+    double det_A = col_1[2]*(col_2[0]*col_3[1] - col_2[1]*col_3[0]) - col_2[2]*(col_1[0]*col_3[1] - col_1[1]*col_3[0]) + col_3[2]*(col_1[0]*col_2[1] - col_1[1]*col_2[0]);
     
     //check wheter we cal solve the system ie if there is an intersection (still need to check the barycentric coefficients later)
     if(det_A == 0) return false;
 
     //The determinants we need for using Cramer's rule for the various unknown ie baricentric coordinates and ray parameter
-    double det_A1 = b[3]*(col_2[1]*col_3[2] - col_2[2]*col_3[1]) - col_2[3]*(b[1]*col_3[2] - b[2]*col_3[1]) + col_3[3]*(b[1]*col_2[2] - b[2]*col_2[1]);
-    double det_A2 = col_1[3]*(b[1]*col_3[2] - b[2]*col_3[1]) - b[3]*(col_1[1]*col_3[2] - col_1[2]*col_3[1]) + col_3[3]*(col_1[1]*b[2] - col_1[2]*b[1]);
-    double det_A3 = col_1[3]*(col_2[1]*b[2] - col_2[2]*b[1]) - col_2[3]*(col_1[1]*b[2] - col_1[2]*b[1]) + b[3]*(col_1[1]*col_2[2] - col_1[2]*col_2[1]);
+    double det_A1 = b[2]*(col_2[0]*col_3[1] - col_2[1]*col_3[0]) - col_2[2]*(b[0]*col_3[1] - b[2]*col_3[0]) + col_3[2]*(b[0]*col_2[1] - b[1]*col_2[0]);
+    double det_A2 = col_1[2]*(b[0]*col_3[1] - b[2]*col_3[0]) - b[2]*(col_1[0]*col_3[1] - col_1[1]*col_3[0]) + col_3[2]*(col_1[0]*b[1] - col_1[1]*b[0]);
+    double det_A3 = col_1[2]*(col_2[0]*b[1] - col_2[2]*b[0]) - col_2[2]*(col_1[0]*b[1] - col_1[1]*b[0]) + b[2]*(col_1[0]*col_2[1] - col_1[1]*col_2[0]);
 
     //barycentric coefficients
     double alpha = det_A1 / det_A;
