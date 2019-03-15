@@ -351,7 +351,7 @@ intersect_triangle(const Triangle&  _triangle,
     _intersection_point  = _ray(_intersection_t);
 
     //check wheter we want flat shaded or Phong shaded 
-    if(draw_mode_) _intersection_normal = _triangle.normal;
+    if(!draw_mode_) _intersection_normal = _triangle.normal;
     else _intersection_normal = normalize(alpha*vertices_[_triangle.i0].normal + beta*vertices_[_triangle.i1].normal + gamma*vertices_[_triangle.i2].normal);
 
     return true;
