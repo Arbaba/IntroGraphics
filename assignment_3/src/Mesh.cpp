@@ -209,8 +209,51 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     * with all triangles of every mesh in the scene. The bounding boxes are computed
     * in `Mesh::compute_bounding_box()`.
     */
+   double t_min;
+    double t_max;
+    double tx_min = NO_INTERSECTION;
+    double ty_min = NO_INTERSECTION;
+    double tz_min = NO_INTERSECTION;
+    double tx_max = NO_INTERSECTION;
+    double ty_max = NO_INTERSECTION;
+    double tz_max = NO_INTERSECTION;
 
-    return true;
+    if (_ray.direction[0] != 0){
+        tx_min = (bb_min_[0] - _ray.origin[0])/_ray.direction[0];
+        tx_max = (bb_max_[0] - _ray.origin[0])/_ray.direction[0];
+    }
+
+     if (_ray.direction[1] != 0){
+        ty_min = (bb_min_[1] - _ray.origin[1])/_ray.direction[1];
+        ty_max = (bb_max_[1] - _ray.origin[1])/_ray.direction[1];
+        
+     }
+    
+     if (_ray.direction[2] != 0){
+         tz_min = (bb_min_[2] - _ray.origin[2])/_ray.direction[2];
+         tz_max = (bb_max_[2] - _ray.origin[2])/_ray.direction[2];
+     }
+
+    if (tx_min > tx_max) std::swap(tx_min, tx_max);
+    if (ty_min > ty_max) std::swap(ty_min, ty_max);
+    if (tz_min > tz_max) std::swap(tz_min, tz_max);
+
+    if(ty_max < tx_min || tx_max < ty_min) return false;
+
+    t_min = std::max(tx_min,ty_min);
+    t_max = std::min(tx_max,ty_max);
+
+    if (tz_max < t_min || t_max < tz_min) return false;
+
+    t_min = std::max(t_min,tz_min);
+    t_max = std::min(t_max,tz_max);
+
+    if (t_min == NO_INTERSECTION || t_max == NO_INTERSECTION || t_min <0 || t_max <0 ) return false;
+
+
+
+   return true;
+
 }
 
 
