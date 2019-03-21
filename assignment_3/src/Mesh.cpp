@@ -212,7 +212,7 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     double t_min;
     double t_max;
 
-    //compute all intersections with planes
+    //compute all the intersections with the planes
     double tx_min = (bb_min_[0] - _ray.origin[0])/_ray.direction[0];
     double tx_max = (bb_max_[0] - _ray.origin[0])/_ray.direction[0];
     
@@ -222,25 +222,21 @@ bool Mesh::intersect_bounding_box(const Ray& _ray) const
     double tz_min = (bb_min_[2] - _ray.origin[2])/_ray.direction[2];
     double tz_max = (bb_max_[2] - _ray.origin[2])/_ray.direction[2];
      
-    //to always have the ray first hitting where the min is 
+    
+    //to simplify computations we make the ray always come from "the same direction"
     if (tx_min > tx_max) std::swap(tx_min, tx_max);
     if (ty_min > ty_max) std::swap(ty_min, ty_max);
     if (tz_min > tz_max) std::swap(tz_min, tz_max);
 
-    //check if the ray is outside this is the x y case 
+    //check if the ray is outside (x y case)
     if(ty_max < tx_min || tx_max < ty_min) return false;
 
     //we take the intersections that are bigger for min and smaller for max 
     t_min = std::max(tx_min,ty_min);
     t_max = std::min(tx_max,ty_max);
 
-    //check if the ray is outside take care of z case
+    //check if the ray is outside (z case)
     if (tz_max < t_min || t_max < tz_min) return false;
-
-    /*
-    t_min = std::max(t_min,tz_min);
-    t_max = std::min(t_max,tz_max);
-    */
    
     return true;
 
