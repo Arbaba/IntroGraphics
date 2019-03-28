@@ -225,7 +225,7 @@ void Solar_viewer::update_body_positions() {
 	mercury_.pos_ = vec4(mercury_.distance_*cos(mercury_.angle_orbit_), 0, mercury_.distance_*sin(mercury_.angle_orbit_), 1);
 	venus_.pos_ = vec4(venus_.distance_*cos(venus_.angle_orbit_), 0, venus_.distance_*sin(venus_.angle_orbit_), 1);
 	mars_.pos_ = vec4(mars_.distance_*cos(mars_.angle_orbit_), 0, mars_.distance_*sin(mars_.angle_orbit_), 1);
-	moon_.pos_ = vec4(moon_.distance_*cos(earth_.angle_orbit_), 0, moon_.distance_*sin(earth_.angle_orbit_), 1);
+	moon_.pos_ = vec4(moon_.distance_*cos(earth_.angle_orbit_), 0, moon_.distance_*sin(earth_.angle_orbit_), 1) + earth_.pos_ ;
 }
 
 //-----------------------------------------------------------------------------
@@ -352,7 +352,7 @@ void Solar_viewer::paint()
      *
      *  Hint: planet centers are stored in "Planet::pos_".
      */
-	//Initialize the eye position to rotate it around the origin
+	/*//Initialize the eye position to rotate it around the origin
 	vec4 eye = vec4(0, 0, dist_factor_ * planet_to_look_at_->radius_, 1.0);
 	//rotate with respect to the origin
 	mat4 rotation = mat4::rotate_y(y_angle_) * mat4::rotate_x(x_angle_);
@@ -371,7 +371,36 @@ void Solar_viewer::paint()
 
 
 
-	draw_scene(projection, view);
+	draw_scene(projection, view);*/
+
+
+	if(in_ship_){
+      vec4     eye = ship_.pos_ + vec4(0,0.01,0,1) + mat4::rotate_y(ship_.angle_+ y_angle_)*vec4(0, 0, dist_factor_ *ship_.radius_, 1);
+      vec4  center = ship_.pos_;
+      vec4      up =mat4::rotate_y(ship_.angle_ + y_angle_)*vec4(0,1,0,0);
+      float radius = ship_.radius_;
+
+      mat4 view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
+
+      billboard_x_angle_ = billboard_y_angle_ = 0.0f;
+
+      mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
+      draw_scene(projection, view);
+
+    }
+    else{
+      vec4     eye = planet_to_look_at_ -> pos_ + mat4::rotate_y(y_angle_)*mat4::rotate_x(x_angle_)*vec4(0, 0, dist_factor_*planet_to_look_at_ -> radius_, 1);
+      vec4  center = planet_to_look_at_ -> pos_;
+      vec4      up = mat4::rotate_y(y_angle_)*mat4::rotate_x(x_angle_)*vec4(0,1,0,0);
+      float radius = planet_to_look_at_ -> radius_;
+
+      mat4 view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
+
+      billboard_x_angle_ = billboard_y_angle_ = 0.0f;
+
+      mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
+      draw_scene(projection, view);
+    }
 
 
 }
@@ -507,7 +536,18 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	unit_sphere_.draw();
 	
 	
-
+	//render mars
+	m_matrix = mat4::translate(ship_.pos_)  *mat4::rotate_y(ship_.angle_)*mat4::scale(ship_.radius_);
+	mv_matrix = _view * m_matrix;
+	mvp_matrix = _projection * mv_matrix;
+	color_shader_.use();
+	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
+															 it may be optimized away by the GLSL    compiler if it's unused. */);
+	color_shader_.set_uniform("tex", 0);
+	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	ship_.tex_.bind();
+	ship_.draw();
     /** \todo Render the star background, the spaceship, and the rest of the celestial bodies.
      *  For now, everything should be rendered with the color_shader_,
      *  which expects uniforms "modelview_projection_matrix", "tex" and "grayscale"
