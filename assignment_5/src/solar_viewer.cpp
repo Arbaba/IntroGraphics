@@ -80,17 +80,7 @@ keyboard(int key, int scancode, int action, int mods)
         }
         switch (key)
         {
-			case GLFW_KEY_8:
-			{
-				dist_factor_ *= 0.9;
-				break;
-			}
-
-			case GLFW_KEY_9:
-			{
-				dist_factor_ *= 1.1;
-				break;
-			}
+			
             // Key 7 switches to viewing the ship.
             case GLFW_KEY_7:
             {
@@ -104,6 +94,24 @@ keyboard(int key, int scancode, int action, int mods)
              *    - key 9 should increase and key 8 should decrease the `dist_factor_`
              *    - 2.5 < `dist_factor_` < 20.0
              */
+
+            case GLFW_KEY_8:
+			{   
+                if(dist_factor_*1.1 < 20){
+				    dist_factor_ *= 1.1;
+				    break;
+                }
+                break;
+			}
+
+			case GLFW_KEY_9:
+			{
+                if(dist_factor_*0.9 > 2.5){
+				    dist_factor_ *= 0.9;
+				    break;
+                }
+                break;
+			}
 
             case GLFW_KEY_R:
             {
