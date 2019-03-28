@@ -338,17 +338,30 @@ void Solar_viewer::paint()
      *
      *  Hint: planet centers are stored in "Planet::pos_".
      */
-    // For now, view the sun from a fixed position...
-    vec4     eye = vec4(0,0,7,1.0);
-    vec4  center = sun_.pos_;
-    vec4      up = vec4(0,1,0,0);
-    float radius = sun_.radius_;
-    mat4    view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
+	//Initialize the eye position to rotate it around the origin
+	vec4 eye = vec4(0, 0, dist_factor_ * planet_to_look_at_->radius_, 1.0);
+	//rotate with respect to the origin
+	mat4 rotation = mat4::rotate_y(y_angle_) * mat4::rotate_x(x_angle_);
+	//move the eye in the planet referential
+	vec4  center = planet_to_look_at_->pos_;
+	eye = rotation * eye + center;
 
-    billboard_x_angle_ = billboard_y_angle_ = 0.0f;
+	//Compute the up vector
+	vec4 planet_to_eye = eye - center;
+	vec3 normal = normalize(vec3(planet_to_eye));
+	//transform it in homogeneous form
+	vec4 up = rotation * vec4(0, 1, 0, 0);
 
-    mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
-    draw_scene(projection, view);
+	mat4    view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
+
+	billboard_x_angle_ = billboard_y_angle_ = 0.0f;
+
+	mat4 projection = mat4::perspective(fovy_, (float)width_ / (float)height_, near_, far_);
+
+
+
+	draw_scene(projection, view);
+
 
 }
 
