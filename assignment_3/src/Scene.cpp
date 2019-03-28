@@ -190,7 +190,7 @@ vec3 Scene::lighting(const vec3& _point, const vec3& _normal, const vec3& _view,
         intersection = intersect(ray, object, point, normals,t);
 
         //Checking if the incident angle is bigger than 90 degrees and if the point is in shadow
-        if(cos_theta > 0 && !intersection || (intersection && (norm(_point - lights[i].position) < norm(_point - point)))){
+        if(cos_theta > 0 && (!intersection || (intersection && (norm(_point - lights[i].position) < norm(_point - point))))){
             //add diffusion part
             color += lights[i].color * _material.diffuse * cos_theta;
             //Checking if the light is reflected by more than 90 degrees or reflected "backward" 
