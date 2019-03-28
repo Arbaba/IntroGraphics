@@ -346,9 +346,6 @@ void Solar_viewer::paint()
 	vec4  center = planet_to_look_at_->pos_;
 	eye = rotation * eye + center;
 
-	//Compute the up vector
-	vec4 planet_to_eye = eye - center;
-	vec3 normal = normalize(vec3(planet_to_eye));
 	//transform it in homogeneous form
 	vec4 up = rotation * vec4(0, 1, 0, 0);
 
@@ -414,6 +411,19 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
     sun_shader_.set_uniform("greyscale", (int)greyscale_);
     sun_.tex_.bind();
     unit_sphere_.draw();
+
+
+	m_matrix = mat4::translate(earth_.pos_) *mat4::rotate_y(earth_.angle_self_) * mat4::scale(earth_.radius_);
+	mv_matrix = _view * m_matrix;
+	mvp_matrix = _projection * mv_matrix;
+	color_shader_.use();
+	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
+															 it may be optimized away by the GLSL    compiler if it's unused. */);
+	color_shader_.set_uniform("tex", 0);
+	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	earth_.tex_.bind();
+	unit_sphere_.draw();
 
     /** \todo Render the star background, the spaceship, and the rest of the celestial bodies.
      *  For now, everything should be rendered with the color_shader_,
