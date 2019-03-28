@@ -80,9 +80,21 @@ keyboard(int key, int scancode, int action, int mods)
         }
         switch (key)
         {
+			case GLFW_KEY_8:
+			{
+				dist_factor_ *= 0.9;
+				break;
+			}
+
+			case GLFW_KEY_9:
+			{
+				dist_factor_ *= 1.1;
+				break;
+			}
             // Key 7 switches to viewing the ship.
             case GLFW_KEY_7:
             {
+
                 planet_to_look_at_ = NULL;
                 in_ship_ = true;
                 break;
@@ -210,8 +222,10 @@ void Solar_viewer::update_body_positions() {
      * */
 
     earth_.pos_ = vec4(earth_.distance_*cos(earth_.angle_orbit_), 0, earth_.distance_*sin(earth_.angle_orbit_), 1);
-
-
+	mercury_.pos_ = vec4(mercury_.distance_*cos(mercury_.angle_orbit_), 0, mercury_.distance_*sin(mercury_.angle_orbit_), 1);
+	venus_.pos_ = vec4(venus_.distance_*cos(venus_.angle_orbit_), 0, venus_.distance_*sin(venus_.angle_orbit_), 1);
+	mars_.pos_ = vec4(mars_.distance_*cos(mars_.angle_orbit_), 0, mars_.distance_*sin(mars_.angle_orbit_), 1);
+	moon_.pos_ = vec4(moon_.distance_*cos(earth_.angle_orbit_), 0, moon_.distance_*sin(earth_.angle_orbit_), 1);
 }
 
 //-----------------------------------------------------------------------------
