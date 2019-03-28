@@ -208,6 +208,10 @@ void Solar_viewer::update_body_positions() {
      *       and earth's moon. Do not explicitly place the space ship, it's position
      *       is fixed for now.
      * */
+
+    earth_.pos_ = vec4(earth_.distance_*cos(earth_.angle_orbit_), 0, earth_.distance_*sin(earth_.angle_orbit_), 1);
+
+
 }
 
 //-----------------------------------------------------------------------------
