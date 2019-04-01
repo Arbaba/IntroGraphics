@@ -24,22 +24,24 @@ Solar_viewer::Solar_viewer(const char* _title, int _width, int _height)
       * To get a true-to-scale solar system, planets would be 20x smaller, and their distance to the sun would be ~11x larger
       * For example r_mercury/r_sun = 0.0034 and distance_mercury_to_sun/r_sun = 33.3
       **/
-      //  sun_    (0.0f,              2.0f*(float)(M_PI)/26.0f,   1.0f,    0.0f),
-      //  mercury_(2.0f*(float)(M_PI)/116.0f,  2.0f*(float)(M_PI)/58.5f,   0.068f, -3.1f),
-      //  venus_  (2.0f*(float)(M_PI)/225.0f,  2.0f*(float)(M_PI)/243.0f,  0.174f,   -7.2f),
-      //  earth_  (2.0f*(float)(M_PI)/365.0f,  2.0f*(float)(M_PI),        0.182f,   -9.8f),
-      //  moon_   (2.0f*(float)(M_PI)/27.0f,   0.0f,  0.048f,   -0.5f),
-      //  mars_   (2.0f*(float)(M_PI)/687.0f,  2.0f*(float)(M_PI)*24.0f/25.0f, 0.098f,-13.8f),
-      //  stars_  (0.0f, 0.0f, 30.0f, 0.0f)
+        sun_    (0.0f,              2.0f*(float)(M_PI)/26.0f,   1.0f,    0.0f),
+        mercury_(2.0f*(float)(M_PI)/116.0f,  2.0f*(float)(M_PI)/58.5f,   0.068f, -3.1f),
+        venus_  (2.0f*(float)(M_PI)/225.0f,  2.0f*(float)(M_PI)/243.0f,  0.174f,   -7.2f),
+        earth_  (2.0f*(float)(M_PI)/365.0f,  2.0f*(float)(M_PI),        0.182f,   -9.8f),
+        moon_   (2.0f*(float)(M_PI)/27.0f,   0.0f,  0.048f,   -0.5f),
+        mars_   (2.0f*(float)(M_PI)/687.0f,  2.0f*(float)(M_PI)*24.0f/25.0f, 0.098f,-13.8f),
+        stars_  (0.0f, 0.0f, 30.0f, 0.0f)
 
       // Even more unrealistic placement/sizing for nicer visualization.
-      sun_    (0.0,              2.0*M_PI/26.0,   1.0f,    0.0f),
-      mercury_(2.0*M_PI/116.0f,  2.0*M_PI/58.5,   0.075f, -1.4f),
+      //sun_    (0.0,              2.0*M_PI/26.0,   1.0f,    0.0f),
+      //mercury_(2.0*M_PI/116.0f,  2.0*M_PI/58.5,   0.075f, -1.4f),
+      /*
       venus_  (2.0*M_PI/225.0f,  2.0*M_PI/243.0,  0.2f,   -2.2f),
       earth_  (2.0*M_PI/365.0f,  2.0*M_PI,        0.25,   -3.3f),
       moon_   (2.0*M_PI/27.0f,   0.0,  0.04,   -0.4f),
       mars_   (2.0*M_PI/687.0f,  2.0*M_PI*24.0/25.0, 0.15,-5.0f),
       stars_  (0.0, 0.0, 21.0, 0.0)
+      */
 {
     // start animation
     timer_active_ = true;
@@ -233,7 +235,7 @@ void Solar_viewer::update_body_positions() {
 	mercury_.pos_ = vec4(mercury_.distance_*cos(mercury_.angle_orbit_), 0, mercury_.distance_*sin(mercury_.angle_orbit_), 1);
 	venus_.pos_ = vec4(venus_.distance_*cos(venus_.angle_orbit_), 0, venus_.distance_*sin(venus_.angle_orbit_), 1);
 	mars_.pos_ = vec4(mars_.distance_*cos(mars_.angle_orbit_), 0, mars_.distance_*sin(mars_.angle_orbit_), 1);
-	moon_.pos_ = vec4(moon_.distance_*cos(earth_.angle_orbit_), 0, moon_.distance_*sin(earth_.angle_orbit_), 1) + earth_.pos_ ;
+	moon_.pos_ = vec4(moon_.distance_*cos(moon_.angle_orbit_), 0, moon_.distance_*sin(moon_.angle_orbit_), 0) + earth_.pos_ ;
 }
 
 //-----------------------------------------------------------------------------
