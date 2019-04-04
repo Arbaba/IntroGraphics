@@ -530,7 +530,10 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
      *      stars, sunglow: still use color_shader_
      *  You'll need to make sure all the GLSL uniform variables are set. For
      *  Phong shading, you need to pass in the modelview matrix, the normal transformation
-     *  matrix, and light position in addition to the color_shader_ parameters.
+     *  matrix, and light position in addition to the color_shader_ parameters.img[(row * width + col) * 4 + 0] = 255; // R
+            img[(row * width + col) * 4 + 1] = 255; // G
+            img[(row * width + col) * 4 + 2] = 255; // B
+            img[(row * width + col) * 4 + 3] = 255; // A
      */
 
     /** \todo Render the sun's halo here using the "color_shader_"
@@ -540,6 +543,23 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
     *   - Bind the texture for and draw sunglow_
     **/
 
+   //render billboard
+
+	m_matrix = mat4::translate(sun_.pos_)*mat4::scale(sun_.radius_*3);
+	mv_matrix = _view * m_matrix;
+	mvp_matrix = _projection * mv_matrix;
+	color_shader_.use();
+	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
+															 it may be optimized away by the GLSL    compiler if it's unused. */);
+	color_shader_.set_uniform("tex", 0);
+	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	sunglow_.tex_.bind();
+	sunglow_.draw();
+	
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glDisable(GL_BLEND);
 
     // check for OpenGL errors
     glCheckError();

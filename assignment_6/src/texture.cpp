@@ -116,6 +116,29 @@ bool Texture::createSunBillboardTexture()
         }
     }
 
+    float radius = 0;
+
+    for (int col = 0; col < width; ++col) {
+        for (int row = 0; row < height; ++row) {
+            radius = (row - 450)*(row - 450) + (col - 450)*(col - 450);
+
+            if (radius < 22500) {
+            img[(row * width + col) * 4 + 0] = 255; // R
+            img[(row * width + col) * 4 + 1] = 165; // G
+            img[(row * width + col) * 4 + 2] = 0; // B
+            img[(row * width + col) * 4 + 3] = 255; // A
+            }
+            else
+            {
+            img[(row * width + col) * 4 + 0] = 255; // R
+            img[(row * width + col) * 4 + 1] = 165; // G
+            img[(row * width + col) * 4 + 2] = 0; // B
+            img[(row * width + col) * 4 + 3] = int(255*22500/radius); // A
+            }
+            
+        }
+    }
+
     return uploadImage(img, width, height);
 }
 
