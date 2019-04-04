@@ -229,13 +229,12 @@ void Solar_viewer::update_body_positions() {
      *       and earth's moon. Do not explicitly place the space ship, it's position
      *       is fixed for now.
      * */
-	const float PI = 3.14159265;
-
-    earth_.pos_ = vec4(earth_.distance_*cos(earth_.angle_orbit_ * PI / 180.0), 0, earth_.distance_*sin(earth_.angle_orbit_ * PI / 180.0), 1);
-	mercury_.pos_ = vec4(mercury_.distance_*cos(mercury_.angle_orbit_ * PI / 180.0), 0, mercury_.distance_*sin(mercury_.angle_orbit_* PI / 180.0), 1);
-	venus_.pos_ = vec4(venus_.distance_*cos(venus_.angle_orbit_* PI / 180.0), 0, venus_.distance_*sin(venus_.angle_orbit_* PI / 180.0), 1);
-	mars_.pos_ = vec4(mars_.distance_*cos(mars_.angle_orbit_ * PI / 180.0), 0, mars_.distance_*sin(mars_.angle_orbit_* PI / 180.0), 1);
-	moon_.pos_ = vec4(moon_.distance_*cos(moon_.angle_orbit_* PI / 180.0), 0, moon_.distance_*sin(moon_.angle_orbit_* PI / 180.0), 0) + earth_.pos_ ;
+	
+    earth_.pos_ = vec4(earth_.distance_*cos(earth_.angle_orbit_ * M_PI / 180.0), 0, earth_.distance_*sin(earth_.angle_orbit_ * M_PI / 180.0), 1);
+	mercury_.pos_ = vec4(mercury_.distance_*cos(mercury_.angle_orbit_ * M_PI / 180.0), 0, mercury_.distance_*sin(mercury_.angle_orbit_* M_PI / 180.0), 1);
+	venus_.pos_ = vec4(venus_.distance_*cos(venus_.angle_orbit_* M_PI / 180.0), 0, venus_.distance_*sin(venus_.angle_orbit_* M_PI / 180.0), 1);
+	mars_.pos_ = vec4(mars_.distance_*cos(mars_.angle_orbit_ * M_PI / 180.0), 0, mars_.distance_*sin(mars_.angle_orbit_* M_PI / 180.0), 1);
+	moon_.pos_ = vec4(moon_.distance_*cos(moon_.angle_orbit_* M_PI / 180.0), 0, moon_.distance_*sin(moon_.angle_orbit_* M_PI / 180.0), 0) + earth_.pos_ ;
 }
 
 //-----------------------------------------------------------------------------
