@@ -362,12 +362,6 @@ void Solar_viewer::paint()
      billboard_y_angle_ = atan2(eye.x ,eye.z) * 180 / M_PI;
      billboard_x_angle_ = -atan2(eye.y , pow(pow(eye.z,2) + pow(eye.x,2),0.5)) * 180 / M_PI;
 
-      std::cout << " x_angle: " << x_angle_<<" \n";
-      std::cout << " billboard_x_angle_: " << billboard_x_angle_<<" \n" << "\n";
-      std::cout << " y_angle_: " << y_angle_<<" \n";
-      std::cout << " billboard_y_angle_: " << billboard_y_angle_<<" \n";
-     
-
       mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
       draw_scene(projection, view);
     }
