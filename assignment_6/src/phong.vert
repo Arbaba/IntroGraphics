@@ -35,5 +35,18 @@ void main()
       Hint: Compute the vertex position, normal and light_position in eye space.
       Hint: Write the final vertex position to gl_Position
     */
+    v2f_texcoord = v_texcoord;
+    gl_Position = modelview_projection_matrix * v_position;
+    
+    
+    v2f_normal = normalize((normal_matrix * v_normal));
+
+    vec4 camera = vec4(0.0,0.0,0.0,1.0);
+    v2f_view = (vec3((modelview_matrix * camera)));
+
+    v2f_light = normalize(vec3(light_position - v_position));
+    
+
+
 
 }

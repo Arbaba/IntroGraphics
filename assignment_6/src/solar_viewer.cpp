@@ -428,7 +428,6 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
     sun_shader_.set_uniform("greyscale", (int)greyscale_);
     sun_.tex_.bind();
     unit_sphere_.draw();
-
     // \todo Paste your star/planet/moon/ship drawing calls from assignment 5 here.
 
     //render earth
@@ -463,12 +462,14 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	m_matrix = mat4::translate(mercury_.pos_) * mat4::rotate_y(mercury_.angle_self_) * mat4::scale(mercury_.radius_);
 	mv_matrix = _view * m_matrix;
 	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
-															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	phong_shader_.use();
+	phong_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	phong_shader_.set_uniform("t", sun_animation_time, true);
+	phong_shader_.set_uniform("tex", 0);
+	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
+	phong_shader_.set_uniform("light_position", light);
+	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	mercury_.tex_.bind();
 	unit_sphere_.draw();
 
@@ -476,12 +477,14 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	m_matrix = mat4::translate(venus_.pos_) * mat4::rotate_y(venus_.angle_self_) * mat4::scale(venus_.radius_);
 	mv_matrix = _view * m_matrix;
 	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
-															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	phong_shader_.use();
+	phong_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	phong_shader_.set_uniform("t", sun_animation_time, true);
+	phong_shader_.set_uniform("tex", 0);
+	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
+	phong_shader_.set_uniform("light_position", light);
+	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	venus_.tex_.bind();
 	unit_sphere_.draw();
 
@@ -489,41 +492,21 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	m_matrix = mat4::translate(moon_.pos_) * mat4::rotate_y(moon_.angle_self_) * mat4::scale(moon_.radius_);
 	mv_matrix = _view * m_matrix;
 	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
-															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	phong_shader_.use();
+	phong_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	phong_shader_.set_uniform("t", sun_animation_time, true);
+	phong_shader_.set_uniform("tex", 0);
+	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
+	phong_shader_.set_uniform("light_position", light);
+	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	moon_.tex_.bind();
 	unit_sphere_.draw();
 
-	//render mars
-	m_matrix = mat4::translate(mars_.pos_) * mat4::rotate_y(mars_.angle_self_) * mat4::scale(mars_.radius_);
-	mv_matrix = _view * m_matrix;
-	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
-															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
-	mars_.tex_.bind();
-	unit_sphere_.draw();
+
 	
 	
-	//render the ship
-	m_matrix = mat4::translate(ship_.pos_)  * mat4::rotate_y(ship_.angle_) * mat4::scale(ship_.radius_);
-	mv_matrix = _view * m_matrix;
-	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
-															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
-	ship_.tex_.bind();
-	ship_.draw();
+
 
     /** \todo Switch from using color_shader_ to the fancier shaders you'll
      * implement in this assignment:
@@ -537,7 +520,34 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
             img[(row * width + col) * 4 + 2] = 255; // B
             img[(row * width + col) * 4 + 3] = 255; // A
      */
+	 //render mars
+	m_matrix = mat4::translate(mars_.pos_) * mat4::rotate_y(mars_.angle_self_) * mat4::scale(mars_.radius_);
+	mv_matrix = _view * m_matrix;
+	mvp_matrix = _projection * mv_matrix;
+	phong_shader_.use();
+	phong_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	phong_shader_.set_uniform("t", sun_animation_time, true);
+	phong_shader_.set_uniform("tex", 0);
+	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
+	phong_shader_.set_uniform("light_position", light);
+	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("greyscale", (int)greyscale_);
+	mars_.tex_.bind();
+	unit_sphere_.draw();
 
+
+	//render the ship
+	m_matrix = mat4::translate(ship_.pos_)  * mat4::rotate_y(ship_.angle_) * mat4::scale(ship_.radius_);
+	mv_matrix = _view * m_matrix;
+	mvp_matrix = _projection * mv_matrix;
+	color_shader_.use();
+	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
+															 it may be optimized away by the GLSL    compiler if it's unused. */);
+	color_shader_.set_uniform("tex", 0);
+	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	ship_.tex_.bind();
+	ship_.draw();
     /** \todo Render the sun's halo here using the "color_shader_"
     *   - Construct a model matrix that scales the billboard to 3 times the
     *     sun's radius and orients it according to billboard_x_angle_ and
