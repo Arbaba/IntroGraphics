@@ -433,13 +433,27 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	m_matrix = mat4::translate(earth_.pos_) * mat4::rotate_y(earth_.angle_self_) * mat4::scale(earth_.radius_);
 	mv_matrix = _view * m_matrix;
 	mvp_matrix = _projection * mv_matrix;
-	color_shader_.use();
-	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
-	color_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
+	earth_shader_.use();
+	earth_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	earth_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
 															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	color_shader_.set_uniform("tex", 0);
-	color_shader_.set_uniform("greyscale", (int)greyscale_);
-	earth_.tex_.bind();
+	//earth_shader_.set_uniform("greyscale", (int)greyscale_);
+	earth_shader_.set_uniform("day_texture", 0);
+	earth_.normal_.bind();
+
+	earth_shader_.set_uniform("night_texture",1);
+	earth_.night_.bind();
+
+	earth_shader_.set_uniform("cloud_texture", 2);
+	earth_.cloud_.bind();
+
+	earth_shader_.set_uniform("gloss_texture", 3);
+
+
+	earth_.gloss_.bind();
+
+
+
 	unit_sphere_.draw();
 
 
