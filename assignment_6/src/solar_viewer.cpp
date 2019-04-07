@@ -344,8 +344,8 @@ void Solar_viewer::paint()
 
       mat4 view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
 
-      billboard_x_angle_ = x_angle_;
-      billboard_y_angle_ = 0.0f;
+      billboard_y_angle_ = atan2(eye.x ,eye.z) * 180 / M_PI;
+      billboard_x_angle_ = -atan2(eye.y , pow(pow(eye.z,2) + pow(eye.x,2),0.5)) * 180 / M_PI;
 
       mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
       draw_scene(projection, view);
@@ -359,22 +359,27 @@ void Solar_viewer::paint()
 
       mat4 view = mat4::look_at(vec3(eye), vec3(center), vec3(up));
 
-      billboard_x_angle_ = x_angle_;
-      billboard_y_angle_ = y_angle_;
+     billboard_y_angle_ = atan2(eye.x ,eye.z) * 180 / M_PI;
+     billboard_x_angle_ = -atan2(eye.y , pow(pow(eye.z,2) + pow(eye.x,2),0.5)) * 180 / M_PI;
+
+      std::cout << " x_angle: " << x_angle_<<" \n";
+      std::cout << " billboard_x_angle_: " << billboard_x_angle_<<" \n" << "\n";
+      std::cout << " y_angle_: " << y_angle_<<" \n";
+      std::cout << " billboard_y_angle_: " << billboard_y_angle_<<" \n";
+     
 
       mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
       draw_scene(projection, view);
     }
 
-
+    
     /** \todo Orient the billboard used to display the sun's glow
      *  Update billboard_x_andle_ and billboard_y_angle_ so that the billboard plane
      *  drawn to produce the sun's halo is orthogonal to the view vector for
      *  the sun's center.
      */
-    billboard_x_angle_ = billboard_y_angle_ = 0.0f;
 
-    mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
+    //mat4 projection = mat4::perspective(fovy_, (float)width_/(float)height_, near_, far_);
     //draw_scene(projection, view);
 
 }
