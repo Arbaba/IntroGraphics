@@ -106,7 +106,7 @@ bool Texture::createSunBillboardTexture()
     *   - Make sure that your texture is fully transparent at its borders to avoid seeing visible edges
     *   - Experiment with the color and with how fast you change the transparency until the effect satisfies you
     **/
-
+    /*
     for (int col = 0; col < width; ++col) {
         for (int row = 0; row < height; ++row) {
             img[(row * width + col) * 4 + 0] = 255; // R
@@ -115,7 +115,8 @@ bool Texture::createSunBillboardTexture()
             img[(row * width + col) * 4 + 3] = 255; // A
         }
     }
-
+    */
+    
     float radius = 0;
 
     for (int col = 0; col < width; ++col) {
@@ -125,17 +126,17 @@ bool Texture::createSunBillboardTexture()
             if (radius < 22500) {
             img[(row * width + col) * 4 + 0] = 255; // R
             img[(row * width + col) * 4 + 1] = 165; // G
-            img[(row * width + col) * 4 + 2] = 0; // B
+            img[(row * width + col) * 4 + 2] = 0;   // B
             img[(row * width + col) * 4 + 3] = 255; // A
             }
             else
             {
             img[(row * width + col) * 4 + 0] = 255; // R
             img[(row * width + col) * 4 + 1] = 165; // G
-            img[(row * width + col) * 4 + 2] = 0; // B
+            img[(row * width + col) * 4 + 2] = 0;   // B
             img[(row * width + col) * 4 + 3] = int(255*22500/(radius*1.5)); // A
             }
-            
+            //int(255*22500/(radius*1.5));
         }
     }
 
