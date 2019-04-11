@@ -122,8 +122,8 @@ bool Texture::createSunBillboardTexture()
             }
             else if (radius > 450)
             {
-            img[(row * width + col) * 4 + 0] = 255; // R
-            img[(row * width + col) * 4 + 1] = 165; // G
+            img[(row * width + col) * 4 + 0] = 0; // R
+            img[(row * width + col) * 4 + 1] = 0; // G
             img[(row * width + col) * 4 + 2] = 0;   // B
             img[(row * width + col) * 4 + 3] = 0; // A
             } else
