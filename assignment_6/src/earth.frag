@@ -62,7 +62,7 @@ void main()
 
     float cos_theta = dot(l, v2f_normal);
     float cos_alpha  = dot(r, v2f_view);
-
+    //CLOUD COLOR !!!!
     //Add ambient contribution
     day_color += i_ambient * material_day;
     lamb_color += i_ambient * cloud;
@@ -72,16 +72,17 @@ void main()
        lamb_color += i_l * cloud * cos_theta;
         if(cos_alpha > 0 ){
             //Add specular contribution
-            if(gloss < 1){
-                shininess = mix(0,1, gloss);
+            if(gloss >= 1){
+                //shininess = mix(0,1, gloss);
                 day_color += i_l * vec3(1,1,1) * pow(cos_alpha, shininess);
             }
         }
     }
-    night_color = mix(night, vec3(0,0,0), cloud);
-    day_color +=  lamb_color;
 
-    vec3 color = mix(0, 1, cos_theta) * day_color +  (1 -  mix(0, 1, cos_theta)) * night_color;
+    night_color = mix(night, vec3(0,0,0), cloud);
+    day_color +=  mix(day_color, lamb_color, cloud);
+    //std::cout << color.r;
+    vec3 color = mix(night_color,day_color, cos_theta);//mix(0, 1, cos_theta) * day_color +  (1 -  mix(0, 1, cos_theta)) * night_color;
 
     // convert RGB color to YUV color and use only the luminance
     if (greyscale) color = vec3(0.299*color.r+0.587*color.g+0.114*color.b);

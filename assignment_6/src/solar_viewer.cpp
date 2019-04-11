@@ -428,7 +428,8 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
     sun_.tex_.bind();
     unit_sphere_.draw();
     // \todo Paste your star/planet/moon/ship drawing calls from assignment 5 here.
-
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     //render earth
 	m_matrix = mat4::translate(earth_.pos_) * mat4::rotate_y(earth_.angle_self_) * mat4::scale(earth_.radius_);
 	mv_matrix = _view * m_matrix;
@@ -437,25 +438,40 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	earth_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
 	earth_shader_.set_uniform("t", sun_animation_time, true /* Indicate that time parameter is optional;
 															 it may be optimized away by the GLSL    compiler if it's unused. */);
-	//earth_shader_.set_uniform("greyscale", (int)greyscale_);
+	
+
 	earth_shader_.set_uniform("day_texture", 0);
-	earth_.normal_.bind();
+	earth_.tex_.bind();
+	earth_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+
+	earth_shader_.set_uniform("greyscale", (int)greyscale_);
+
+	earth_shader_.set_uniform("light_position", light);
 
 	earth_shader_.set_uniform("night_texture",1);
 	earth_.night_.bind();
 
-	earth_shader_.set_uniform("cloud_texture", 2);
+	earth_shader_.set_uniform("cloud_texture",2 );
 	earth_.cloud_.bind();
 
 	earth_shader_.set_uniform("gloss_texture", 3);
-
+	
 
 	earth_.gloss_.bind();
 
 
 
 	unit_sphere_.draw();
-
+	
+	/*color_shader_.use();
+	color_shader_.set_uniform("modelview_projection_matrix", mvp_matrix);
+	color_shader_.set_uniform("t", sun_animation_time, true );
+	color_shader_.set_uniform("tex", 0);
+	color_shader_.set_uniform("greyscale", (int)greyscale_);
+	earth_.tex_.bind();
+	unit_sphere_.draw();
+	*/
+	glDisable(GL_BLEND);
 
 	//render stars
 	m_matrix = mat4::translate(stars_.pos_) * mat4::rotate_y(stars_.angle_self_) * mat4::scale(stars_.radius_);
