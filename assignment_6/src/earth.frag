@@ -62,7 +62,6 @@ void main()
 
     float cos_theta = dot(l, v2f_normal);
     float cos_alpha  = dot(r, v2f_view);
-    //CLOUD COLOR !!!!
     //Add ambient contribution
     day_color += i_ambient * material_day;
     lamb_color += i_ambient * cloud;
@@ -73,7 +72,6 @@ void main()
         if(cos_alpha > 0 ){
             //Add specular contribution
             if(gloss >= 1){
-                //shininess = mix(0,1, gloss);
                 day_color += i_l * vec3(1,1,1) * pow(cos_alpha, shininess);
             }
         }
