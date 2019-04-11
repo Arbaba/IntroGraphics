@@ -442,7 +442,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 
 	earth_shader_.set_uniform("day_texture", 0);
 	earth_.tex_.bind();
-	earth_shader_.set_uniform("normal_matrix", (transpose(inverse(mv_matrix))));
+	earth_shader_.set_uniform("normal_matrix", (transpose(inverse(mat3(mv_matrix)))));
 
 	earth_shader_.set_uniform("greyscale", (int)greyscale_);
 
@@ -497,7 +497,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	phong_shader_.set_uniform("tex", 0);
 	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
 	phong_shader_.set_uniform("light_position", light);
-	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("normal_matrix", transpose(inverse(mat3(mv_matrix))));
 	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	mercury_.tex_.bind();
 	unit_sphere_.draw();
@@ -512,7 +512,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	phong_shader_.set_uniform("tex", 0);
 	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
 	phong_shader_.set_uniform("light_position", light);
-	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("normal_matrix", transpose(inverse(mat3(mv_matrix))));
 	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	venus_.tex_.bind();
 	unit_sphere_.draw();
@@ -527,7 +527,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	phong_shader_.set_uniform("tex", 0);
 	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
 	phong_shader_.set_uniform("light_position", light);
-	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("normal_matrix", transpose(inverse(mat3(mv_matrix))));
 	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	moon_.tex_.bind();
 	unit_sphere_.draw();
@@ -559,7 +559,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 	phong_shader_.set_uniform("tex", 0);
 	phong_shader_.set_uniform("modelview_matrix", mv_matrix);
 	phong_shader_.set_uniform("light_position", light);
-	phong_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	phong_shader_.set_uniform("normal_matrix",  transpose(inverse(mat3(mv_matrix))));
 	phong_shader_.set_uniform("greyscale", (int)greyscale_);
 	mars_.tex_.bind();
 	unit_sphere_.draw();

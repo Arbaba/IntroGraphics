@@ -36,7 +36,7 @@ void main()
     gl_Position = modelview_projection_matrix * v_position;
     
     
-    v2f_normal = normalize((transpose(inverse(normal_matrix)) * v_normal));
+    v2f_normal = normalize(normal_matrix* v_normal);
 
     vec4 camera = vec4(0.0,0.0,0.0,1.0);
     v2f_view = normalize(vec3((modelview_matrix * camera)));
