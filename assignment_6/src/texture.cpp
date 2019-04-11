@@ -12,6 +12,7 @@
 #include <cassert>
 #include <algorithm>
 #include "lodepng.h"
+#include <math.h> 
 
 //=============================================================================
 
@@ -106,37 +107,32 @@ bool Texture::createSunBillboardTexture()
     *   - Make sure that your texture is fully transparent at its borders to avoid seeing visible edges
     *   - Experiment with the color and with how fast you change the transparency until the effect satisfies you
     **/
-    /*
-    for (int col = 0; col < width; ++col) {
-        for (int row = 0; row < height; ++row) {
-            img[(row * width + col) * 4 + 0] = 255; // R
-            img[(row * width + col) * 4 + 1] = 255; // G
-            img[(row * width + col) * 4 + 2] = 255; // B
-            img[(row * width + col) * 4 + 3] = 255; // A
-        }
-    }
-    */
     
     float radius = 0;
 
     for (int col = 0; col < width; ++col) {
         for (int row = 0; row < height; ++row) {
-            radius = (row - 450)*(row - 450) + (col - 450)*(col - 450);
+            radius = pow((row - 450)*(row - 450) + (col - 450)*(col - 450),0.5);
 
-            if (radius < 22500) {
+            if (radius < 150) {
             img[(row * width + col) * 4 + 0] = 255; // R
             img[(row * width + col) * 4 + 1] = 165; // G
             img[(row * width + col) * 4 + 2] = 0;   // B
             img[(row * width + col) * 4 + 3] = 255; // A
             }
-            else
+            else if (radius > 450)
             {
             img[(row * width + col) * 4 + 0] = 255; // R
             img[(row * width + col) * 4 + 1] = 165; // G
             img[(row * width + col) * 4 + 2] = 0;   // B
-            img[(row * width + col) * 4 + 3] = int(255*22500/(radius*1.5)); // A
+            img[(row * width + col) * 4 + 3] = 0; // A
+            } else
+            {
+            img[(row * width + col) * 4 + 0] = 255; // R
+            img[(row * width + col) * 4 + 1] = 165; // G
+            img[(row * width + col) * 4 + 2] = 0;   // B
+            img[(row * width + col) * 4 + 3] = int(pow(255*(1- (radius)/(450)),0.85)); // A
             }
-            //int(255*22500/(radius*1.5));
         }
     }
 
