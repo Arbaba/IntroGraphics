@@ -442,7 +442,7 @@ void Solar_viewer::draw_scene(mat4& _projection, mat4& _view)
 
 	earth_shader_.set_uniform("day_texture", 0);
 	earth_.tex_.bind();
-	earth_shader_.set_uniform("normal_matrix", mat3(mv_matrix));
+	earth_shader_.set_uniform("normal_matrix", (transpose(inverse(mv_matrix))));
 
 	earth_shader_.set_uniform("greyscale", (int)greyscale_);
 

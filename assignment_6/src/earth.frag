@@ -81,7 +81,6 @@ void main()
 
     night_color = mix(night, vec3(0,0,0), cloud);
     day_color +=  mix(day_color, lamb_color, cloud);
-    //std::cout << color.r;
     vec3 color = mix(night_color,day_color, cos_theta);//mix(0, 1, cos_theta) * day_color +  (1 -  mix(0, 1, cos_theta)) * night_color;
 
     // convert RGB color to YUV color and use only the luminance
