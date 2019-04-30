@@ -25,8 +25,18 @@ std::string LindenmayerSystemDeterministic::expandSymbol(unsigned char const& sy
 		For a given symbol in the sequence, what should it be replaced with after expansion?
 		The rules are in this->rules, see lsystem.h for details.
 	*/
-	// that is a dummy implementation to be replaced
-	return {char(sym)}; // this constructs string from char 
+	/*
+	if ((sym == '-') || (sym == '+') || (sym == ' ')){
+		return {char(sym)};
+	}
+	*/
+	auto mapped = this->rules.find(sym);
+
+	if (mapped != this->rules.end()) {
+        return mapped->second;  
+    } else {
+        return {char(sym)};
+    }
 
 	/*
 	You may find useful:
@@ -42,7 +52,15 @@ std::string LindenmayerSystem::expandOnce(std::string const& symbol_sequence) {
 		Perform one iteration of grammar expansion on `symbol_sequence`.
 		Use the expandSymbol method
 	*/
-	return "";
+
+	std::string out = "";
+	
+	
+	for (size_t i = 0 ; i < symbol_sequence.length(); i++){
+    	out += expandSymbol(symbol_sequence[i]);
+	}
+
+	return out;
 
 	//============================================================
 }
@@ -52,8 +70,25 @@ std::string LindenmayerSystem::expand(std::string const& initial, uint32_t num_i
 		TODO 1.3
 		Perform `num_iters` iterations of grammar expansion (use expandOnce)
 	*/
-	return "";
 
+	
+	std::string out = initial;
+
+	for (size_t i = 0; i < num_iters; i++){
+		out = expandOnce(out);
+	}
+	return out;
+	
+	std::cout << "NUMBER OF ITERATIONS: " << num_iters << "\n" << fflush;
+	std::cout << initial << "\n" << fflush;
+	
+	/*
+	if(num_iters <=0){
+		return initial;
+	}else{
+		expand(expandOnce(initial), num_iters - 1);
+	}
+   */
 	//============================================================
 }
 
@@ -64,6 +99,8 @@ std::vector<Segment> LindenmayerSystem::draw(std::string const& symbols) {
 		The initial position is (0, 0) and the initial direction is "up" (0, 1)
 		Segment is std::pair<vec2, vec2>
 	*/
+
+	
 	return {};
 	
 	//============================================================
