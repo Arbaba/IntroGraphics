@@ -1,0 +1,330 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/Jzon/Jzon.h
+string
+-
+vector
+-
+queue
+-
+iterator
+-
+istream
+-
+ostream
+-
+
+../lib/glew/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+Availability.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
+../lib/glfw/include/GLFW/glfw3.h
+stddef.h
+-
+OpenGL/gl3.h
+-
+OpenGL/gl3ext.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GL/glcorearb.h
+-
+GLES/gl.h
+-
+GLES/glext.h
+-
+GLES2/gl2.h
+-
+GLES2/gl2ext.h
+-
+GLES3/gl3.h
+-
+GLES3/gl2ext.h
+-
+GLES3/gl31.h
+-
+GLES3/gl2ext.h
+-
+GL/gl.h
+-
+GL/glext.h
+-
+GL/glu.h
+-
+
+../lib/lodePNG/lodepng.h
+string.h
+-
+vector
+-
+string
+-
+lodepng.h
+../lib/lodePNG/lodepng.h
+iostream
+-
+lodepng.h
+../lib/lodePNG/lodepng.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon/Jzon.cpp
+Jzon.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon/Jzon.h
+sstream
+-
+fstream
+-
+stack
+-
+algorithm
+-
+cassert
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon/Jzon.h
+string
+-
+vector
+-
+queue
+-
+iterator
+-
+istream
+-
+ostream
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.cpp
+lsystem.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+stack
+-
+memory
+-
+iostream
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+vector
+-
+unordered_map
+-
+memory
+-
+math.h
+-
+utils/misc.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.h
+utils/render_2d.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem_load.cpp
+lsystem.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+memory
+-
+iostream
+-
+Jzon.h
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/main.cpp
+lsystem.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+iostream
+-
+vector
+-
+utils/render_svg.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.cpp
+LSystemViewer.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.h
+lodepng.h
+-
+algorithm
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.h
+gl.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/gl.h
+glfw_window.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.h
+array
+-
+shader.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.h
+../lsystem.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+Quad.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/Quad.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/Quad.h
+gl.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/gl.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/gl.h
+glew.h
+-
+stdlib.h
+-
+glew.h
+-
+glew.h
+-
+iostream
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.cpp
+glfw_window.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.h
+iostream
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.h
+gl.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/gl.h
+stdlib.h
+-
+stdio.h
+-
+GLFW/glfw3.h
+-
+vector
+-
+map
+-
+string
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.cpp
+glmath.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.h
+iostream
+-
+cassert
+-
+math.h
+-
+algorithm
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.cpp
+misc.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.h
+string
+-
+iostream
+-
+fstream
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.h
+random
+-
+vec.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.cpp
+render_2d.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.h
+iostream
+-
+sstream
+-
+misc.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.h
+../lsystem.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.h
+LSystemViewer.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.h
+vector
+-
+string
+-
+functional
+-
+memory
+-
+vec.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.cpp
+render_svg.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.h
+misc.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.h
+sstream
+-
+iomanip
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.h
+string
+-
+vector
+-
+render_2d.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.cpp
+shader.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.h
+iostream
+-
+fstream
+-
+sstream
+-
+cassert
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.h
+gl.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/gl.h
+glmath.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.h
+vector
+-
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.cpp
+vec.h
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.h
+
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.h
+iostream
+-
+cassert
+-
+math.h
+-
+algorithm
+-
+algorithm
+-
+

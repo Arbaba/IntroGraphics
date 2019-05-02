@@ -11,17 +11,15 @@ int main(int arg_count, char *arg_values[]) {
 
 	std::string const in_file_path(arg_values[1]);
 	std::string const out_file_path = (arg_count == 3) ? arg_values[2] : "";
-
+	
 	auto lsys = LindenmayerSystem::load_lsystem_from_file(in_file_path);
-
+	
 	if (!lsys) {
 		std::cout << "Failed to load system\n\n";
 		return 1;
 	}
-
 	if (!out_file_path.empty()) {
 		// If the name of the output file is specified, we write the expanded sequence and render to a file.
-
 		std::string const sym_sequence_expanded = lsys->expand();
 		write_string_to_file(sym_sequence_expanded, out_file_path + ".txt");
 

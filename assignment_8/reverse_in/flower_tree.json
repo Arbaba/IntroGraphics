@@ -3,8 +3,9 @@
 	"stochastic": false,
 	"initial": "T",
 	"angle_deg": 120.0,
-	"num_iters": 6,
+	"num_iters": 7,
 	"rules": {
-		"T": "FF"
+		"T": "F[+T][-T]",
+		"F": "FF"
 	}
 }

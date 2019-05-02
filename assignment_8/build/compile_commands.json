@@ -1,0 +1,137 @@
+[
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/lsystem.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/lsystem_load.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem_load.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/lsystem_load.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/main.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/main.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/main.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/misc.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/misc.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/vec.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/vec.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/render_2d.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_2d.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/render_svg.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/render_svg.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/LSystemViewer.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/LSystemViewer.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/glfw_window.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glfw_window.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/glmath.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/glmath.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/src/utils/shader.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/src/utils/shader.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build",
+  "command": "/usr/bin/c++  -DGLEW_STATIC -DSHADER_PATH=\"\\\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/shaders\\\"\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -isystem \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG\"  -g   -std=gnu++14 -o CMakeFiles/lsys.dir/lib/Jzon/Jzon.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon/Jzon.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon/Jzon.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glew",
+  "command": "/usr/bin/c++  -Dglew_EXPORTS  -g -fPIC   -std=gnu++14 -o CMakeFiles/glew.dir/glew.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew/glew.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glew/glew.cpp"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/context.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/context.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/context.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/init.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/init.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/init.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/input.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/input.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/input.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/monitor.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/monitor.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/monitor.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/window.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/window.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/window.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/x11_init.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_init.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_init.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/x11_monitor.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_monitor.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_monitor.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/x11_window.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_window.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/x11_window.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/xkb_unicode.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/xkb_unicode.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/xkb_unicode.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/linux_joystick.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/linux_joystick.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/linux_joystick.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/posix_time.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/posix_time.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/posix_time.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/posix_tls.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/posix_tls.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/posix_tls.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-7 -D_GLFW_USE_CONFIG_H -Dglfw_EXPORTS -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src\"  -g -fPIC   -Wall -fvisibility=hidden -o CMakeFiles/glfw.dir/glx_context.c.o   -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/glx_context.c\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/src/glx_context.c"
+},
+{
+  "directory": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/lodePNG",
+  "command": "/usr/bin/c++   -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/glfw/include\" -I\"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/Jzon\"   -fPIC -Wall -pedantic -ansi -g   -std=gnu++14 -o CMakeFiles/lodePNG.dir/lodepng.cpp.o -c \"/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG/lodepng.cpp\"",
+  "file": "/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/lib/lodePNG/lodepng.cpp"
+}
+]

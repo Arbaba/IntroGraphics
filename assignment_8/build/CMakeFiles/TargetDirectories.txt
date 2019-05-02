@@ -1,0 +1,14 @@
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/CMakeFiles/rebuild_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/CMakeFiles/lsys.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/CMakeFiles/edit_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glew/CMakeFiles/rebuild_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glew/CMakeFiles/glew.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glew/CMakeFiles/edit_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/CMakeFiles/rebuild_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/CMakeFiles/edit_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src/CMakeFiles/rebuild_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src/CMakeFiles/glfw.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/glfw/src/CMakeFiles/edit_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/lodePNG/CMakeFiles/rebuild_cache.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/lodePNG/CMakeFiles/lodePNG.dir
+/home/snozzi/Desktop/Scuola/Computer Graphics/Project/IntroGraphics/assignment_8/build/lib/lodePNG/CMakeFiles/edit_cache.dir
